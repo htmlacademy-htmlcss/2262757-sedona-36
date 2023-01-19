@@ -1,7 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Екатерина Рувимская](https://up.htmlacademy.ru/htmlcss/36/user/2262757).
-* Наставник: `Татьяна Симоненко`(https://htmlacademy.ru/profile/tatien).
+* Наставник: [Татьяна Симоненко](https://htmlacademy.ru/profile/tatien).
 
 ---
 
