@@ -50,35 +50,34 @@
       <section class="hotels-filter">
         <header class="hotels-filter-header">
           <h1 class="white">Гостиницы Седоны</h1>
-          <ul class="breadcrumbs">
+          <ul class="breadcrumbs-list">
             <li class="breadcrumbs-item">
-              <a class="breadcrumbs-link" href="/index.html">
-                <img class="breadcrumbs-icon" src="">
+              <a class="breadcrumbs-link" href="index.html">
               </a>
             </li>
             <li class="breadcrumbs-item">
-              <img class="breadcrumbs-icon" src="">
+              <span class="breadcrumbs-divider"></span>
             </li>
             <li class="breadcrumbs-item">
               <a class="breadcrumbs-link white">Гостиницы</a>
             </li>
           </ul>
         </header>
-        <h2 class="visually-hidden">Фильтр</h2>
-        <form class="filter-form" action="https://echo.htmlacademy.ru/" method="post">
+        <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
+          <h2 class="visually-hidden">Фильтр</h2>
           <div class="left-side-filter">
-            <fieldset class="hotels-filter-group">
+            <fieldset class="hotels-filter-area">
               <legend class="hotels-filter-title">Инфраструктура</legend>
               <ul class="hotels-filter-list">
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="filter-input" type="checkbox" name="Бассейн" checked>
+                    <input class="filter-input" type="checkbox" name="pool" checked>
                     <span class="filter-item white">Бассейн</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="filter-input" type="checkbox" name="Парковка" checked>
+                    <input class="filter-input" type="checkbox" name="parking" checked>
                     <span class="filter-item white">Парковка</span>
                   </label>
                 </li>
@@ -90,24 +89,24 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="hotels-filter-group">
+            <fieldset class="hotels-filter-area">
               <legend class="hotels-filter-title">Тип жилья:</legend>
               <ul class="hotels-filter-list">
                 <li class="hotels-filter-item">
                   <label>
-                    <input type="radio" name="Тип жилья" value="Гостиница" checked>
+                    <input type="radio" name="residence-type" value="Гостиница" checked>
                     <span class="filter-item white">Гостиница</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input type="radio" name="Тип жилья" value="Мотель">
+                    <input type="radio" name="residence-type" value="Мотель">
                     <span class="filter-item white">Мотель</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input type="radio" name="Тип жилья" value="Апартаменты">
+                    <input type="radio" name="residence-type" value="Апартаменты">
                     <span class="filter-item white">Апартаменты</span>
                   </label>
                 </li>
@@ -115,16 +114,13 @@
             </fieldset>
           </div>
           <div class="right-side-filter">
-            <fieldset class="hotels-filter-group">
+            <fieldset class="hotels-filter-area">
               <legend class="hotels-filter-title">Стоимость, ₽</legend>
               <!--Двойной ползунок пока делать не умеем-->
             </fieldset>
             <div class="buttons-form">
-              <button class="button inner-button" type="submit">
-                <span class="inner-button-text white">ПРИМЕНИТЬ</span></button>
-              <button class="button inner-button-clean" type="reset">
-                <span class="inner-button-text white">СБРОСИТЬ</span>
-              </button>
+              <button class="submit-button" type="submit">Применить</button>
+              <button class="reset-button" type="reset">Сбросить</button>
             </div>
           </div>
         </form>
@@ -133,26 +129,29 @@
         <h2 class="visually-hidden">Каталог гостиниц</h2>
         <div class="sorting">
           <p class="sorting-result">Найдено гостиниц: 38</p>
-          <div class="sorting-block">
+          <div class="sorting-frame">
             <select class="hotels-select" aria-label="Отсортировать">
               <option value="cheap" selected>Сначала дешевые</option>
               <option value="expensive">Сначала дорогие</option>
               <option value="popular">Сначала популярные</option>
             </select>
-            <div class="sorting-icons-group">
-              <a class="button sorting-icon-button active-sorting-button-icon">
-                <img class="sorting-icon" src="">
-                <span class="visually-hidden">Плитка</span>
-              </a>
-              <a class="button sorting-icon-button ">
-                <img class="sorting-icon" src="">
-                <span class="visually-hidden">Сплошной</span>
-              </a>
-              <a class="button sorting-icon-button ">
-                <img class="sorting-icon" src="">
-                <span class="visually-hidden">Список</span>
-              </a>
-            </div>
+            <ul class="sorting-icons-list">
+              <li class="sorting-icons-item activ-sorting-icons-item">
+                <a class="sorting-icon">
+                  <span class="visually-hidden">Показать плиткой</span>
+                </a>
+              </li>
+              <li class="sorting-icons-item">
+                <a class="sorting-icon">
+                  <span class="visually-hidden">Показать целиком</span>
+                </a>
+              </li>
+              <li class="sorting-icons-item">
+                <a class="sorting-icon">
+                  <span class="visually-hidden">Показать списком</span>
+                </a>
+              </li>
+            </ul>
           </div>
         </div>
         <ul class="hotels-cards">
