@@ -9,7 +9,7 @@
   <body>
     <header class="page-header">
       <a class="logo-sedona-link" href="index.html">
-        <img class="logo-sedona" src="images/icons/logo.svg" width="140" height="70" alt="Логотип Седона." role="img"
+        <img class="logo-sedona" src="images/logo.svg" width="140" height="70" alt="Логотип Седона." role="img"
           aria-label="Переход на главную страницу.">
       </a>
       <nav class="navigation">
@@ -27,14 +27,12 @@
         <ul class="navigation-user">
           <li class="navigation-item">
             <a class="navigation-link" href="#">
-              <img src="images/icons/search.svg" width="18" height="18" alt="Кнопка поиска." role="img"
-                aria-label="Переход на страницу поиска.">
+              <span class="visually-hidden">Переход на страницу поиска.</span>
             </a>
           </li>
           <li class="navigation-item">
             <a class="navigation-link" href="#">
-              <img src="images/icons/favorites.svg" width="18" height="17" alt="Кнопка избранных гостиниц." role="img"
-                aria-label="Просмотр избранных гостиниц">
+              <span class="visually-hidden">Просмотр избранных гостиниц</span>
               <div class="favorite-circle">
                 <span class="favorite-number">12</span>
               </div>
@@ -247,6 +245,9 @@
           </li>
         </ul>
         <ol class="pagination-list">
+          <!--пишут, что пагинация должна быть нумерованным списком. пока не знаю чем.
+          не знаю, как реализовать поле <...> нумерация мешает.
+          -->
           <li class="pagination-item">
             <a class="pagination-link pagination-link-active">
               <span class="visually-hidden">Страница 1</span>
@@ -299,20 +300,17 @@
         <ul class="social-media-list">
           <li class="social-media-item">
             <a class="social-media-button" href="https://vk.com/htmlacademy">
-              <img src="images/icons/social-vk.svg" width="24" height="14" alt="Логотип ВКонтакте." role="img"
-                aria-label="Перейти в группу ВКонтакте.">
+              <span class="visually-hidden">Перейти в группу ВКонтакте.</span>
             </a>
           </li>
           <li class="social-media-item">
             <a class="social-media-button" href="https://t.me/htmlacademy ">
-              <img src="images/icons/social-telegram.svg" width="18" height="15" alt="Логотип Telegram." role="img"
-                aria-label="Перейти на Telegram канал.">
+              <span class="visually-hidden">Перейти на Telegram канал.</span>
             </a>
           </li>
           <li class="social-media-item">
             <a class="social-media-button" href="https://www.youtube.com/user/htmlacademyru">
-              <img src="/images/icons/social-youtube.svg" width="22" height="17" alt="Логотип Youtube." role="img"
-                aria-label="Перейти на Youtube канал.">
+              <span class="visually-hidden">Перейти на Youtube канал.</span>
             </a>
           </li>
         </ul>
@@ -326,8 +324,7 @@
       <section class="developer">
         <h2 class="visually-hidden">Разработчик</h2>
         <a class="htmlacademy-button" href="https://htmlacademy.ru/">
-          <img src="images/icons/html-academy.svg" width="115" height="33" alt="Логотип HTML Academy" role="img"
-            aria-label="Перейти на сайт HTML Academy">
+          <span class="visually-hidden">Перейти на сайт HTML Academy.</span>
         </a>
       </section>
     </footer>
