@@ -188,21 +188,16 @@ a {
 
 .social-media-list {
   display: flex;
-  width: 142px;
-  height: 40px;
 }
 
-/*возможно есть смысл сделать так ко всем li*/
-.social-media-item {
-  width: 100%;
-  height: 100%;
-}
+/*почему то чуть больше своего содержимого*/
+.social-media-item {}
 
 /*надо посадить картинки в центр ссылки*/
 .social-media-button {
   display: inline-block;
-  width: 100%;
-  height: 100%;
+  width: 47px;
+  height: 40px;
 }
 
 .vk-button {
