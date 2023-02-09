@@ -21,6 +21,7 @@ body {
   font-weight: 400;
   background-color: rgba(242, 242, 242, 1);
   margin: 0;
+  height: 100vh;
 }
 
 .visually-hidden {
@@ -51,25 +52,51 @@ body {
   color: white;
 }
 
-.page {
-  width: 1200px;
-  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
-  margin: 0 auto;
-  background-color: white;
-}
-
 .page-big-text {
   font-size: 30px;
   line-height: 36px;
   font-weight: 700;
 }
 
+.page {
+  width: 1200px;
+  min-height: 100%;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-container {
+  flex-grow: 1;
+}
+
 /*page-header*/
+
+.page-header {
+  width: 100%;
+  display: flex;
+}
+
+.logo-sedona-link {
+  margin-left: 70px;
+}
+
+.navigation {
+  width: 892px;
+  margin-right: 70px;
+  margin-left: auto;
+  display: flex;
+  justify-content: space-between;
+}
 
 .navigation-list {
   list-style-type: none;
+  max-width: 446px;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 .navigation-link {
@@ -82,22 +109,26 @@ body {
 
 .navigation-user-list {
   list-style-type: none;
+  max-width: 446px;
   padding: 0;
   margin: 0;
+  display: flex;
 }
 
 .search {
   display: inline-block;
-  background: url("../images/icons/search.svg") no-repeat;
-  width: 44px;
-  height: 64px;
+  background-image: url("../images/icons/search.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
 }
 
 .favorites {
   display: inline-block;
-  background: url("../images/icons/favorites.svg") no-repeat;
-  width: 44px;
-  height: 64px;
+  background-image: url("../images/icons/favorites.svg");
+  background-repeat: no-repeat;
+  width: 20px;
+  height: 20px;
 }
 
 .favorite-number {
@@ -149,6 +180,16 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.advantages-item {
+  display: flex;
+}
+
+.advantages-square {
+  width: 400px;
 }
 
 .blue {
@@ -167,6 +208,8 @@ body {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 /*hotel-search*/
@@ -279,7 +322,16 @@ body {
 .hotels-list {
   list-style-type: none;
   padding: 0;
-  margin: 0;
+  margin: 40px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.hotel-card {
+  padding: 20px;
+  outline: 1px solid #E6E6E6;
+  border-radius: 4px;
 }
 
 .hotel-card-title {
@@ -324,11 +376,15 @@ body {
 
 .pagination-list {
   list-style-type: none;
+  width: 1060px;
   padding: 0;
-  margin: 0;
+  margin: 40px 70px 60px 70px;
+  display: flex;
+  gap: 8px;
 }
 
 .pagination-link {
+  display: inline-block;
   font-size: 20px;
   line-height: 36px;
   font-weight: 700;
@@ -336,6 +392,9 @@ body {
   color: white;
   text-decoration: none;
   background-color: #82B3D3;
+  width: 60px;
+  height: 60px;
+  border-radius: 4px;
 }
 
 .pagination-link-active {
@@ -350,32 +409,60 @@ body {
 
 /*page-footer*/
 
+.page-footer {
+  margin-top: auto;
+}
+
+.page-footer-container {
+  margin: 40px 70px 30px 70px;
+  display: flex;
+  justify-content: space-between;
+}
+
 .social-media-list {
   list-style-type: none;
   padding: 0;
   margin: 0;
+  display: flex;
+}
+
+.social-media-item {
+  width: 47px;
 }
 
 .social-media-link {
-  display: inline-block;
-  width: 47px;
-  height: 40px;
+  display: block;
 }
 
-.vk-button {
-  background: url('../images/icons/social-vk.svg') no-repeat;
+.vk-link {
+  background-image: url('../images/icons/social-vk.svg');
+  background-repeat: no-repeat;
+  width: 24px;
+  height: 14px;
 }
 
-.telegram-button {
-  background: url("../images/icons/social-telegram.svg") no-repeat;
+.telegram-link {
+  background-image: url("../images/icons/social-telegram.svg");
+  background-repeat: no-repeat;
+  width: 18px;
+  height: 16px;
 }
 
-.youtube-button {
-  background: url("../images/icons/social-youtube.svg") no-repeat;
+.youtube-link {
+  background-image: url("../images/icons/social-youtube.svg");
+  background-repeat: no-repeat;
+  width: 22px;
+  height: 17px;
+}
+
+.footer-contacts {
+  max-width: 720px;
+  text-align: center;
 }
 
 .contacts {
   font-style: normal;
+  width: 720px;
 }
 
 .contacts-phone {
