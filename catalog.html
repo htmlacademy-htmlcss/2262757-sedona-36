@@ -121,25 +121,25 @@
         <section class="catalog">
           <h2 class="visually-hidden">Каталог гостиниц</h2>
           <div class="sorting">
-            <p class="page-big-text">Найдено гостиниц: 38</p>
+            <p class="sorting-title">Найдено гостиниц: 38</p>
             <select class="sorting-by-price" aria-label="Отсортировать">
               <option value="cheap" selected>Сначала дешевые</option>
               <option value="expensive">Сначала дорогие</option>
               <option value="popular">Сначала популярные</option>
             </select>
             <ul class="view-types-list">
-              <li class="view-types-item view-types-item-activ">
-                <a class="show-by-tile">
+              <li class="view-types-item">
+                <a class="view-types-button show-by-tile view-types-button-active" href="#">
                   <span class="visually-hidden">Показать плиткой</span>
                 </a>
               </li>
               <li class="view-types-item">
-                <a class="show-the-whole">
+                <a class="view-types-button show-the-whole" href="#">
                   <span class="visually-hidden">Показать целиком</span>
                 </a>
               </li>
               <li class="list">
-                <a class="show-as-a-list">
+                <a class="view-types-button show-as-a-list" href="#">
                   <span class="visually-hidden">Показать списком</span>
                 </a>
               </li>
@@ -160,7 +160,9 @@
                   <button type="button" class="button add-to-favorite">В избранное</button>
                 </div>
                 <div class="hotels-rating">
-                  <span class="four-rating-star visually-hidden">4 звезды</span>
+                  <div class="rating-star four-rating-star">
+                    <span class="visually-hidden">4 звезды</span>
+                  </div>
                   <p class="rating-text">Рейтинг: 8,5</p>
                 </div>
               </article>
@@ -180,7 +182,9 @@
                     избранном</button>
                 </div>
                 <div class="hotels-rating">
-                  <span class="four-rating-star visually-hidden">4 звезды</span>
+                  <div class="rating-star four-rating-star">
+                    <span class="visually-hidden">4 звезды</span>
+                  </div>
                   <p class="rating-text">Рейтинг: 9,2</p>
                 </div>
               </article>
@@ -198,7 +202,9 @@
                   <button type="button" class="button add-to-favorite">В избранное</button>
                 </div>
                 <div class="hotels-rating">
-                  <span class="three-rating-star visually-hidden">3 звезды</span>
+                  <div class="rating-star three-rating-star">
+                    <span class="visually-hidden">3 звезды</span>
+                  </div>
                   <p class="rating-text">Рейтинг: 6,9</p>
                 </div>
               </article>
@@ -216,8 +222,8 @@
                   <button type="button" class="button add-to-favorite">В избранное</button>
                 </div>
                 <div class="hotels-rating">
-                  <div class="rating-stars-area">
-                    <span class="two-rating-star visually-hidden">2 звезды</span>
+                  <div class="rating-star two-rating-star">
+                    <span class="visually-hidden">2 звезды</span>
                   </div>
                   <p class="rating-text">Рейтинг: 5,0</p>
                 </div>
@@ -261,7 +267,8 @@
           <h2 class="page-big-text">Подпишитесь на рассылку</h2>
           <p class="common-text">Только полезная информация и никакого спама,<br>честное бойскаутское!</p>
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
-            <input class="subscribe-input catalog-subscribe-input" type="text" name="e-mail" placeholder="Ваш e-mail" required>
+            <input class="subscribe-input catalog-subscribe-input" type="text" name="e-mail" placeholder="Ваш e-mail"
+              required>
             <button class="button subscribe-button" type="submit">Подписаться</button>
           </form>
         </section>
