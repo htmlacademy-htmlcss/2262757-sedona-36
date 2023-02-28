@@ -179,7 +179,7 @@ body {
 .navigation-user-button {
   display: flex;
   background-color: #756157;
-  width: 144px;
+  width: 160px;
   height: 36px;
   justify-content: center;
   align-items: center;
@@ -209,6 +209,10 @@ body {
   vertical-align: bottom;
 }
 
+.upper-text-block .page-big-text {
+  margin-bottom: 25px;
+}
+
 /*advantages*/
 
 .upper-text-block {
@@ -229,6 +233,7 @@ body {
   line-height: 28px;
   font-weight: 700;
   margin: 0;
+  text-transform: uppercase;
 }
 
 .advantages-title::after {
@@ -308,6 +313,7 @@ body {
   font-size: 24px;
   line-height: 28px;
   font-weight: 700;
+  text-transform: uppercase;
   margin: 102px 0 30px;
 }
 
@@ -337,7 +343,7 @@ body {
   line-height: 36px;
   background-color: #756157;
   width: 376px;
-  height: 54px;
+  height: 52px;
   margin: 54px auto;
 }
 
