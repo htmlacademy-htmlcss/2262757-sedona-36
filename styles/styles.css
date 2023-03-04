@@ -176,19 +176,11 @@ body {
   right: 4px;
 }
 
-.navigation-user-button-wrapper {
-  display: block;
-  padding: 14px 0 14px 20px;
-  text-decoration: none;
-}
-
 .navigation-user-button {
-  display: flex;
   background-color: #756157;
   width: 160px;
   height: 36px;
-  justify-content: center;
-  align-items: center;
+  margin: 14px 0 14px 20px;
 }
 
 /*Главная страница*/
@@ -371,9 +363,12 @@ body {
 }
 
 .subscribe-input {
-  width: 412px;
-  padding: 14px 20px;
-  border-style: none;
+  width: 452px;
+  height: 52px;
+  box-sizing: border-box;
+  padding-left: 18px;
+  padding-right: 18px;
+  border: 2px solid transparent;
   border-radius: 4px 0 0 4px;
   background-color: white;
   font-family: inherit;
@@ -524,7 +519,6 @@ body {
 .reset-button {
   width: 191px;
   height: 36px;
-  box-sizing: border-box;
   background-color: transparent;
 }
 
@@ -651,7 +645,6 @@ body {
 .range-toggle {
   width: 20px;
   height: 20px;
-  box-sizing: content-box;
   background-color: white;
   border: none;
   border-radius: 5px;
@@ -730,19 +723,6 @@ body {
 }
 
 .view-types-button-current {
-  border-color: black;
-}
-
-.view-types-button:hover {
-  border-color: black;
-}
-
-.view-types-button:focus {
-  border-color: #68A2CA;
-  outline: none;
-}
-
-.view-types-button:active {
   border-color: black;
 }
 
@@ -978,29 +958,193 @@ body {
   fill: rgba(117, 97, 87, 0.3);
 }
 
-/*Состояния*/
+/*Модальное окно*/
 
-.navigation-user-button-wrapper:hover .navigation-user-button,
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(242, 242, 242, 0.8);
+  display: flex;
+}
+
+.modal-container {
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+  border-radius: 30px;
+  background-color: white;
+  margin: auto;
+  padding: 64px 70px;
+}
+
+.hotel-search-form {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: 700;
+  row-gap: 48px;
+}
+
+.modal-container .page-big-text {
+  grid-column: 1 / 4;
+  margin: 0 0 64px 0;
+}
+
+.hotel-search-close-button {
+  grid-column: 4 / -1;
+  justify-self: end;
+  width: 52px;
+  height: 52px;
+  background-color: #F2F2F2;
+  border-radius: 50%;
+  background-image: url("../images/icons/close-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  transform: translateX(18px);
+  cursor: pointer;
+}
+
+.arrival-date {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.departure-date {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quantity-of-adults {
+  grid-column: span 2;
+  display: flex;
+  width: 247px;
+  align-items: center;
+}
+
+.quantity-of-children {
+  grid-column: span 2;
+  justify-self: end;
+  display: flex;
+  width: 242px;
+  align-items: center;
+}
+
+.arrival-date-input,
+.departure-date-input,
+.quantity-of-adults-input,
+.quantity-of-children-input {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: inherit;
+  box-sizing: border-box;
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 4px;
+}
+
+.arrival-date-input,
+.departure-date-input {
+  width: 440px;
+  height: 48px;
+  padding: 0 54px 0 20px;
+  background-image: url("../images/icons/calendar-icon.svg");
+  background-repeat: no-repeat;
+  background-position: right 22px center;
+}
+
+.quantity-of-adults-input,
+.quantity-of-children-input {
+  width: 110px;
+  height: 48px;
+  appearance: textfield;
+  text-align: center;
+  padding-left: 22px;
+  padding-right: 22px;
+  margin-left: auto;
+}
+
+.quantity-of-adults-input::-webkit-inner-spin-button,
+.quantity-of-children-input::-webkit-outer-spin-button {
+  appearance: none;
+}
+
+.tooltip-children {
+  display: block;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: #83B3D3;
+  background-image: url("../images/icons/info-icon.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  margin-left: 10px;
+}
+
+.hotel-search-submit-button {
+  grid-column: 1 / -1;
+  width: 577px;
+  height: 60px;
+  background-color: #83B3D3;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+/*Состояния*/
+/*Навигация*/
+
+.logo-sedona-link[href]:hover,
+.logo-sedona-link[href]:focus,
+.logo-sedona-link[href]:focus-visible {
+  opacity: 0.8;
+  outline: none;
+}
+
+.logo-sedona-link[href]:active {
+  opacity: 0.6;
+}
+
+.navigation-link[href]:hover,
+.navigation-link[href]:focus,
+.search:hover,
+.search:focus,
+.favorites:hover,
+.favorites:focus {
+  background-color: rgba(211, 211, 211, 0.8);
+  outline: none;
+}
+
+.navigation-link[href]:active,
+.search:active,
+.favorites:active {
+  background-color: rgb(211, 211, 211);
+}
+
+/*Кнопки*/
+
+.navigation-user-button:hover,
 .hotel-search-button:hover,
 .about-hotel-button:hover,
-.navigation-user-button-wrapper:focus .navigation-user-button,
+.navigation-user-button:focus,
 .hotel-search-button:focus,
 .about-hotel-button:focus {
   background-color: #615048;
   outline: none;
 }
 
-.navigation-user-button-wrapper:focus {
-  outline: none;
-}
-
-.navigation-user-button-wrapper:active .navigation-user-button,
+.navigation-user-button:active,
 .hotel-search-button:active,
 .about-hotel-button:active {
   color: rgba(255, 255, 255, 0.3);
 }
 
-.navigation-user-button-wrapper:disabled .navigation-user-button,
+.navigation-user-button:disabled,
 .hotel-search-button:disabled,
 .about-hotel-button:disabled,
 .add-to-favorite:disabled,
@@ -1008,6 +1152,9 @@ body {
 .submit-button:disabled,
 .add-to-favorite-added:disabled {
   background-color: #E5E5E5;
+  color: white;
+  outline: none;
+  cursor: default;
 }
 
 .add-to-favorite:hover,
@@ -1022,7 +1169,8 @@ body {
 
 .add-to-favorite:active,
 .subscribe-button:active,
-.submit-button:active {
+.submit-button:active,
+.add-to-favorite-added:active {
   color: rgba(255, 255, 255, 0.3);
 }
 
@@ -1030,10 +1178,6 @@ body {
 .add-to-favorite-added:focus {
   background-color: #6C9E42;
   outline: none;
-}
-
-.add-to-favorite-added:active {
-  color: rgba(255, 255, 255, 0.3);
 }
 
 .reset-button:hover {
@@ -1046,12 +1190,18 @@ body {
 }
 
 .reset-button:active {
+  outline: none;
+  border: none;
   opacity: 0.3;
 }
 
 .reset-button:disabled {
+  outline: none;
   opacity: 0.1;
+  cursor: default;
 }
+
+/*Пагинация*/
 
 .pagination-link[href]:hover,
 .pagination-link[href]:focus {
@@ -1062,38 +1212,46 @@ body {
 
 .pagination-link[href]:active {
   color: rgba(255, 255, 255, 0.3);
+  background-color: #82B3D3;
+  border: none;
 }
 
+/*Подписка*/
+/*Кнопки сортировки*/
+
 .sorting-by-price:hover,
-.sorting-by-price:focus {
+.sorting-by-price:focus,
+.subscribe-input:hover,
+.subscribe-input:focus {
   border-color: #68A2CA;
   outline: none;
 }
 
-.sorting-by-price:active {
+.sorting-by-price:active,
+.subscribe-input:active {
   border-color: #3F5E72;
 }
 
-.sorting-by-price:disabled {
+.sorting-by-price:disabled,
+.subscribe-input:disabled {
   border-color: black;
   opacity: 0.3;
 }
 
-.navigation-link[href]:hover,
-.navigation-link[href]:focus,
-.search:hover,
-.search:focus,
-.favorites:hover,
-.favorites:focus {
-  background-color: rgba(0, 0, 0, 0.1);
+.view-types-button:hover {
+  border-color: black;
+}
+
+.view-types-button:focus {
+  border-color: #68A2CA;
   outline: none;
 }
 
-.navigation-link[href]:active,
-.search:active,
-.favorites:active {
-  background-color: rgba(0, 0, 0, 0.2);
+.view-types-button:active {
+  border-color: black;
 }
+
+/*Каталог форма*/
 
 .hotels-filter-item:hover {
   opacity: 0.6;
@@ -1103,10 +1261,18 @@ body {
   opacity: 0.3;
 }
 
+/*Не работает*/
 .visually-hidden-checkbox:focus .checkbox-input,
 .visually-hidden-radio:focus .radio-input {
   border: 3px solid #83B3D3;
 }
+
+.visually-hidden-checkbox:disabled .hotels-filter-item,
+.visually-hidden-radio:disabled .hotels-filter-item {
+  opacity: 0.1;
+}
+
+/*Ползунок*/
 
 .range-input:hover {
   background-color: #E6E6E6;
@@ -1119,7 +1285,16 @@ body {
 }
 
 .range-input:active {
+  background-color: #F2F2F2;
   border: 2px solid black;
+  outline: none;
+}
+
+.range-input:disabled {
+  opacity: 0.2;
+  background-color: #F2F2F2;
+  border: none;
+  outline: none;
 }
 
 .range-toggle:hover {
@@ -1135,4 +1310,13 @@ body {
 .range-toggle:active {
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
   border: 2px solid #83B3D3;
+  outline: none;
+}
+
+.range-toggle:disabled {
+  background-color: lightslategray;
+  box-shadow: none;
+  border: none;
+  outline: none;
+  cursor: default;
 }

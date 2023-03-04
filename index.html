@@ -40,9 +40,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-user-button-wrapper" href="#">
-                <span class="button navigation-user-button">Хочу сюда!</span>
-              </a>
+                <button type="button" class="button navigation-user-button">Хочу сюда!</button>
             </li>
           </ul>
         </nav>
@@ -183,6 +181,32 @@
           </a>
         </section>
       </footer>
+    </div>
+    <div class="modal-overlay">
+      <div class="modal-container">
+        <form class="hotel-search-form" action="https://echo.htmlacademy.ru/" method="post">
+          <h2 class="page-big-text">Поиск гостиницы в Седоне</h2>
+          <button type="button" class="hotel-search-close-button">
+            <span class="visually-hidden">Закрыть</span>
+          </button>
+          <label class="arrival-date">Дата заезда:
+            <input type="text" class="arrival-date-input" value="27 апреля 2020">
+          </label>
+          <label class="departure-date">Дата выезда:
+            <input type="text" class="departure-date-input" value="1 сентября 2023">
+          </label>
+          <label class="quantity-of-adults">Взрослые:
+            <input type="number" class="quantity-of-adults-input" value="2">
+          </label>
+          <label class="quantity-of-children">Дети:
+            <span class="tooltip-children">
+              <span class="visually-hidden">Подробнее.</span>
+            </span>
+            <input type="number" class="quantity-of-children-input" value="2">
+          </label>
+          <button type="submit" class="button hotel-search-submit-button">Найти</button>
+        </form>
+      </div>
     </div>
   </body>
 

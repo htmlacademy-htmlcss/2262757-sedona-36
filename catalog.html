@@ -40,9 +40,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-user-button-wrapper" href="#">
-                <span class="button navigation-user-button">Хочу сюда!</span>
-              </a>
+              <button type="button" class="button navigation-user-button">Хочу сюда!</button>
             </li>
           </ul>
         </nav>
@@ -91,23 +89,26 @@
             <fieldset class="hotels-filter-area">
               <legend class="hotels-filter-title">Тип Жилья:</legend>
               <ul class="hotels-filter-list">
-                <li class="hotels-filter-item" >
+                <li class="hotels-filter-item">
                   <label>
-                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type" value="hotel" checked>
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="hotel" checked>
                     <span class="radio-input"></span>
                     Гостиница
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type" value="motel">
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="motel">
                     <span class="radio-input"></span>
                     Мотель
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type" value="apartment">
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="apartment">
                     <span class="radio-input"></span>
                     Апартаменты
                   </label>
@@ -147,7 +148,7 @@
           <h2 class="visually-hidden">Каталог гостиниц</h2>
           <div class="sorting">
             <p class="sorting-title">Найдено гостиниц: 38</p>
-            <select class="sorting-by-price" aria-label="Отсортировать">
+            <select class="sorting-by-price" name="sorting-by-price" id="sorting-by-price" aria-label="Отсортировать">
               <option value="cheap" selected>Сначала дешевые</option>
               <option value="expensive">Сначала дорогие</option>
               <option value="popular">Сначала популярные</option>
