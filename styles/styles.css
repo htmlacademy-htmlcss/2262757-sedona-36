@@ -44,7 +44,7 @@ body {
   text-decoration: none;
   text-align: center;
   border-radius: 4px;
-  border-style: none;
+  border: none;
   color: white;
   display: block;
   cursor: pointer;
@@ -531,22 +531,21 @@ body {
   align-items: center;
 }
 
-.checkbox-input {
+.checkbox-input,
+.radio-input {
   width: 20px;
   height: 20px;
-  border-radius: 4px;
   display: block;
   background-color: white;
   margin-right: 16px;
 }
 
+.checkbox-input {
+  border-radius: 4px;
+}
+
 .radio-input {
-  width: 20px;
-  height: 20px;
   border-radius: 50%;
-  display: block;
-  background-color: white;
-  margin-right: 16px;
 }
 
 .visually-hidden-checkbox:checked + .checkbox-input::before {
@@ -590,8 +589,8 @@ body {
   font-weight: 700;
   font-size: 18px;
   line-height: 24px;
-  padding-left: 20px;
-  border: none;
+  padding-left: 18px;
+  border: 2px solid transparent;
   background-color: #F2F2F2;
   appearance: textfield;
 }
@@ -603,12 +602,12 @@ body {
 
 .range-input-min-price {
   border-radius: 4px 0 0 4px;
-  padding-right: 47px;
+  padding-right: 45px;
 }
 
 .range-input-max-price {
   border-radius: 0 4px 4px 0;
-  padding-right: 50px;
+  padding-right: 48px;
 }
 
 .range-inputs label {
@@ -690,15 +689,14 @@ body {
   color: #333333;
   width: 292px;
   height: 49px;
-  box-sizing: border-box;
   padding-left: 20px;
-  padding-right: 44px;
+  padding-right: 40px;
   border: 2px solid #E5E5E5;
   border-radius: 4px;
   background-color: transparent;
   background-image: url("../images/icons/select-icon.svg");
   background-repeat: no-repeat;
-  background-position: center right 20px;
+  background-position: center right 18px;
 }
 
 .view-types-list {
@@ -918,6 +916,10 @@ body {
   fill: rgba(104, 162, 202, 0.3);
 }
 
+.social-media-link:focus {
+  outline: none;
+}
+
 .footer-contacts {
   max-width: 720px;
 }
@@ -934,6 +936,7 @@ body {
 .contacts-phone:hover,
 .contacts-phone:focus {
   color: #756157;
+  outline: none;
 }
 
 .contacts-phone:active {
@@ -954,6 +957,10 @@ body {
   fill: #756157;
 }
 
+.htmlacademy-link:focus {
+  outline: none;
+}
+
 .htmlacademy-link:active .htmlacademy-logo {
   fill: rgba(117, 97, 87, 0.3);
 }
@@ -961,13 +968,17 @@ body {
 /*Модальное окно*/
 
 .modal-overlay {
-  position: fixed;
+  position: static;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(242, 242, 242, 0.8);
   display: flex;
+}
+
+.modal-close {
+  display: none;
 }
 
 .modal-container {
@@ -989,7 +1000,7 @@ body {
 
 .modal-container .page-big-text {
   grid-column: 1 / 4;
-  margin: 0 0 64px 0;
+  margin: 0;
 }
 
 .hotel-search-close-button {
@@ -997,14 +1008,18 @@ body {
   justify-self: end;
   width: 52px;
   height: 52px;
+  color: transparent;
   background-color: #F2F2F2;
   border-radius: 50%;
-  background-image: url("../images/icons/close-icon.svg");
-  background-repeat: no-repeat;
-  background-position: center;
   border: none;
   transform: translateX(18px);
   cursor: pointer;
+}
+
+.hotel-search-close-button svg {
+  display: block;
+  margin: auto;
+  fill: black;
 }
 
 .arrival-date {
@@ -1012,6 +1027,24 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+}
+
+.arrival-date::after,
+.departure-date::after {
+  content: "На эти даты есть свободные номера. Пока есть.";
+  color: #333333;
+  position: absolute;
+  font-size: 16px;
+  line-height: 21px;
+  font-weight: 400;
+  left: 157px;
+  top: 52px;
+}
+
+.arrival-date-error::after {
+  content: "Мы не можем отправить вас в прошлое.";
+  color: #FF5757;
 }
 
 .departure-date {
@@ -1019,6 +1052,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .quantity-of-adults {
@@ -1026,6 +1060,7 @@ body {
   display: flex;
   width: 247px;
   align-items: center;
+  position: relative;
 }
 
 .quantity-of-children {
@@ -1034,6 +1069,7 @@ body {
   display: flex;
   width: 242px;
   align-items: center;
+  position: relative;
 }
 
 .arrival-date-input,
@@ -1043,20 +1079,26 @@ body {
   font-family: inherit;
   font-size: 18px;
   font-weight: inherit;
-  box-sizing: border-box;
   background-color: #F2F2F2;
-  border: none;
   border-radius: 4px;
+  border: 2px solid transparent;
+  box-sizing: border-box;
 }
 
 .arrival-date-input,
 .departure-date-input {
   width: 440px;
   height: 48px;
-  padding: 0 54px 0 20px;
+  padding: 0 46px 0 18px;
   background-image: url("../images/icons/calendar-icon.svg");
   background-repeat: no-repeat;
-  background-position: right 22px center;
+  background-position: right 20px center;
+}
+
+.arrival-date-input::placeholder,
+.departure-date-input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 1;
 }
 
 .quantity-of-adults-input,
@@ -1065,8 +1107,8 @@ body {
   height: 48px;
   appearance: textfield;
   text-align: center;
-  padding-left: 22px;
-  padding-right: 22px;
+  padding-left: 38px;
+  padding-right: 38px;
   margin-left: auto;
 }
 
@@ -1075,8 +1117,33 @@ body {
   appearance: none;
 }
 
-.tooltip-children {
+.delete-person,
+.add-person {
+  width: 40px;
+  height: 48px;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  padding: 0;
+}
+
+.delete-person svg,
+.add-person svg {
   display: block;
+  margin: auto;
+  fill: rgba(117, 97, 87, 0.3);
+}
+
+.delete-person {
+  right: 70px;
+}
+
+.add-person {
+  right: 0;
+}
+
+.about-children {
   width: 26px;
   height: 26px;
   border-radius: 50%;
@@ -1085,6 +1152,12 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   margin-left: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+.about-children:hover .tooltip-children {
+  display: flex;
 }
 
 .hotel-search-submit-button {
@@ -1092,8 +1165,42 @@ body {
   width: 577px;
   height: 60px;
   background-color: #83B3D3;
+  border-radius: 10px;
   font-size: 20px;
   line-height: 24px;
+}
+
+.tooltip-children {
+  width: 256px;
+  height: 143px;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: #333333;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+  padding: 15px 18px 18px 22px;
+  display: none;
+  align-items: center;
+  position: absolute;
+  top: 41px;
+  left: -115px;
+  cursor: default;
+}
+
+.tooltip-children::before {
+  content: "";
+  display: block;
+  width: 19px;
+  height: 9px;
+  background-image: url("../images/icons/tooltip-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  position: absolute;
+  top: -9px;
+  left: 119px;
 }
 
 /*Состояния*/
@@ -1206,14 +1313,13 @@ body {
 .pagination-link[href]:hover,
 .pagination-link[href]:focus {
   background-color: #68A2CA;
-  border: 1px solid #82B3D3;
-  outline: none;
+  outline: 1px solid #82B3D3;
 }
 
 .pagination-link[href]:active {
   color: rgba(255, 255, 255, 0.3);
   background-color: #82B3D3;
-  border: none;
+  outline: none;
 }
 
 /*Подписка*/
@@ -1257,19 +1363,24 @@ body {
   opacity: 0.6;
 }
 
+.visually-hidden-checkbox:focus + .checkbox-input,
+.visually-hidden-radio:focus + .radio-input {
+  outline: 3px solid #83B3D3;
+}
+
 .hotels-filter-item:active {
   opacity: 0.3;
+  outline: none;
 }
 
-/*Не работает*/
-.visually-hidden-checkbox:focus .checkbox-input,
-.visually-hidden-radio:focus .radio-input {
-  border: 3px solid #83B3D3;
+.visually-hidden-checkbox:disabled + .checkbox-input,
+.visually-hidden-radio:disabled + .radio-input {
+  background-color: rgba(0, 0, 0, 0.2);
+  background-image: none;
 }
-
-.visually-hidden-checkbox:disabled .hotels-filter-item,
-.visually-hidden-radio:disabled .hotels-filter-item {
-  opacity: 0.1;
+.visually-hidden-checkbox:disabled + .checkbox-input::before,
+.visually-hidden-radio:disabled + .radio-input::before {
+  display: none;
 }
 
 /*Ползунок*/
@@ -1280,8 +1391,7 @@ body {
 
 .range-input:focus {
   background-color: #E6E6E6;
-  border: 3px solid #83B3D3;
-  outline: none;
+  outline: 3px solid #83B3D3;
 }
 
 .range-input:active {
@@ -1293,7 +1403,7 @@ body {
 .range-input:disabled {
   opacity: 0.2;
   background-color: #F2F2F2;
-  border: none;
+  border: 2px solid transparent;
   outline: none;
 }
 
@@ -1303,20 +1413,150 @@ body {
 
 .range-toggle:focus {
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
-  border: 3px solid #83B3D3;
-  outline: none;
+  outline: 3px solid #83B3D3;
 }
 
 .range-toggle:active {
   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.4);
-  border: 2px solid #83B3D3;
-  outline: none;
+  outline: 2px solid #83B3D3;
 }
 
 .range-toggle:disabled {
   background-color: lightslategray;
   box-shadow: none;
-  border: none;
   outline: none;
   cursor: default;
+}
+
+/*Модальное окно*/
+
+.hotel-search-close-button:hover {
+  background-color: #E6E6E6;
+}
+
+.hotel-search-close-button:focus {
+  background-color: #E6E6E6;
+  outline: 3px solid #83B3D3;
+}
+
+.hotel-search-close-button:active {
+  outline: none;
+}
+
+.hotel-search-close-button:active svg {
+  fill: rgba(0, 0, 0, 0.33);
+}
+
+.hotel-search-close-button:disabled {
+  background-color: #E6E6E6;
+  opacity: 0.2;
+}
+
+.hotel-search-close-button:disabled svg {
+  fill: black;
+}
+
+.arrival-date-input:hover,
+.departure-date-input:hover,
+.quantity-of-adults-input:hover,
+.quantity-of-children-input:hover {
+  background-color: #E6E6E6;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.arrival-date-input:focus,
+.departure-date-input:focus,
+.quantity-of-adults-input:focus,
+.quantity-of-children-input:focus {
+  background-color: #E6E6E6;
+  color: rgba(0, 0, 0, 0.6);
+  outline: 3px solid #83B3D3;
+}
+
+.arrival-date-input:active,
+.departure-date-input:active,
+.quantity-of-adults-input:active,
+.quantity-of-children-input:active {
+  background-color: #F2F2F2;
+  color: black;
+  border-color: black;
+  outline: none;
+}
+
+.arrival-date-input:disabled,
+.departure-date-input:disabled,
+.quantity-of-adults-input:disabled,
+.quantity-of-children-input:disabled {
+  background-color: #F2F2F2;
+  color: rgba(0, 0, 0, 0.6);
+  opacity: 0.2;
+  border-color: transparent;
+  outline: none;
+}
+
+.quantity-of-adults-input:disabled ~ .delete-person,
+.quantity-of-adults-input:disabled ~ .add-person,
+.quantity-of-children-input:disabled ~ .delete-person,
+.quantity-of-children-input:disabled ~ .add-person {
+  display: none;
+}
+
+.hotel-search-submit-button:hover,
+.hotel-search-submit-button:focus {
+  background-color: #68A2CA;
+  outline: none;
+}
+
+.hotel-search-submit-button:active {
+  background-color: #68A2CA;
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.hotel-search-submit-button:disabled {
+  background-color: #E5E5E5;
+  color: white;
+  cursor: default;
+}
+
+.delete-person:hover svg,
+.add-person:hover svg {
+  fill: black;
+}
+
+.delete-person:focus,
+.add-person:focus {
+  outline: none;
+}
+
+.delete-person:focus svg,
+.add-person:focus svg {
+  fill: black;
+  outline: 3px solid #82B3D3;
+  border-radius: 4px;
+}
+
+.delete-person:active svg,
+.add-person:active svg {
+  fill: rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.delete-person:disabled,
+.add-person:disabled {
+  opacity: 0.2;
+  outline: none;
+  cursor: default;
+}
+
+.delete-person:disabled svg,
+.add-person:disabled svg {
+  fill: rgba(117, 97, 87, 0.3);
+  outline: none;
+}
+
+/*Не работает*/
+
+.arrival-date-input:disabled + .arrival-date::after,
+.departure-date-input:disabled + .departure-date::after {
+  display: none;
 }
