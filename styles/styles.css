@@ -968,7 +968,7 @@ body {
 /*Модальное окно*/
 
 .modal-overlay {
-  position: static;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -1030,9 +1030,7 @@ body {
   position: relative;
 }
 
-.arrival-date::after,
-.departure-date::after {
-  content: "На эти даты есть свободные номера. Пока есть.";
+.hint {
   color: #333333;
   position: absolute;
   font-size: 16px;
@@ -1042,8 +1040,7 @@ body {
   top: 52px;
 }
 
-.arrival-date-error::after {
-  content: "Мы не можем отправить вас в прошлое.";
+.hint-error {
   color: #FF5757;
 }
 
@@ -1113,6 +1110,8 @@ body {
 }
 
 .quantity-of-adults-input::-webkit-inner-spin-button,
+.quantity-of-adults-input::-webkit-outer-spin-button,
+.quantity-of-children-input::-webkit-inner-spin-button,
 .quantity-of-children-input::-webkit-outer-spin-button {
   appearance: none;
 }
@@ -1156,8 +1155,8 @@ body {
   position: relative;
 }
 
-.about-children:hover .tooltip-children {
-  display: flex;
+.about-children:focus {
+  outline: 3px solid #83B3D3;
 }
 
 .hotel-search-submit-button {
@@ -1171,23 +1170,26 @@ body {
 }
 
 .tooltip-children {
+  display: none;
   width: 256px;
-  height: 143px;
-  box-sizing: border-box;
   margin: 0;
-  background-color: #333333;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-  border-radius: 10px;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
-  padding: 15px 18px 18px 22px;
-  display: none;
-  align-items: center;
+  background-color: #333333;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 20px 18px 23px 22px;
   position: absolute;
   top: 41px;
   left: -115px;
   cursor: default;
+}
+
+.about-children:focus .tooltip-children,
+.about-children:hover .tooltip-children {
+  display: block;
 }
 
 .tooltip-children::before {
@@ -1378,6 +1380,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   background-image: none;
 }
+
 .visually-hidden-checkbox:disabled + .checkbox-input::before,
 .visually-hidden-radio:disabled + .radio-input::before {
   display: none;
@@ -1483,6 +1486,11 @@ body {
   outline: none;
 }
 
+.departure-date-input:disabled + .hint,
+.arrival-date-input:disabled + .hint {
+  display: none;
+}
+
 .arrival-date-input:disabled,
 .departure-date-input:disabled,
 .quantity-of-adults-input:disabled,
@@ -1552,11 +1560,4 @@ body {
 .add-person:disabled svg {
   fill: rgba(117, 97, 87, 0.3);
   outline: none;
-}
-
-/*Не работает*/
-
-.arrival-date-input:disabled + .arrival-date::after,
-.departure-date-input:disabled + .departure-date::after {
-  display: none;
 }
