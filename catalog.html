@@ -40,9 +40,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-user-button-wrapper" href="#">
-                <span class="button navigation-user-button">Хочу сюда!</span>
-              </a>
+              <button type="button" class="button navigation-user-button">Хочу сюда!</button>
             </li>
           </ul>
         </nav>
@@ -63,54 +61,82 @@
           <form class="filter-form" action="https://echo.htmlacademy.ru/" method="get">
             <h2 class="visually-hidden">Фильтр</h2>
             <fieldset class="hotels-filter-area">
-              <legend class="hotels-filter-title">Инфраструктура</legend>
+              <legend class="hotels-filter-title">Инфраструктура:</legend>
               <ul class="hotels-filter-list">
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="checkbox-input" type="checkbox" name="pool" checked>
-                    Бассейн
+                    <input class="visually-hidden visually-hidden-checkbox" type="checkbox" name="pool" checked>
+                    <span class="checkbox-input"></span>
+                    <span class="checkbox-radio-text">Бассейн</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="checkbox-input" type="checkbox" name="parking" checked>
-                    Парковка
+                    <input class="visually-hidden visually-hidden-checkbox" type="checkbox" name="parking" checked>
+                    <span class="checkbox-input"></span>
+                    <span class="checkbox-radio-text">Парковка</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="checkbox-input" type="checkbox" name="Wi-Fi">
-                    Wi-Fi
+                    <input class="visually-hidden visually-hidden-checkbox" type="checkbox" name="Wi-Fi">
+                    <span class="checkbox-input"></span>
+                    <span class="checkbox-radio-text">Wi-Fi</span>
                   </label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="hotels-filter-area">
-              <legend class="hotels-filter-title">Тип жилья:</legend>
+              <legend class="hotels-filter-title">Тип Жилья:</legend>
               <ul class="hotels-filter-list">
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="radio-input" type="radio" name="residence-type" value="hotel" checked>
-                    Гостиница
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="hotel" checked>
+                    <span class="radio-input"></span>
+                    <span class="checkbox-radio-text">Гостиница</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="radio-input" type="radio" name="residence-type" value="motel">
-                    Мотель
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="motel">
+                    <span class="radio-input"></span>
+                    <span class="checkbox-radio-text">Мотель</span>
                   </label>
                 </li>
                 <li class="hotels-filter-item">
                   <label>
-                    <input class="radio-input" type="radio" name="residence-type" value="apartment">
-                    Апартаменты
+                    <input class="visually-hidden visually-hidden-radio" type="radio" name="residence-type"
+                      value="apartment">
+                    <span class="radio-input"></span>
+                    <span class="checkbox-radio-text">Апартаменты</span>
                   </label>
                 </li>
               </ul>
             </fieldset>
             <fieldset class="hotels-filter-area">
-              <legend class="hotels-filter-title">Стоимость, ₽</legend>
-              <!--Двойной ползунок пока делать не умеем-->
+              <legend class="hotels-filter-title">Стоимость, ₽:</legend>
+              <div class="range-inputs">
+                <label>
+                  <input class="range-input range-input-min-price" type="number" value="0" name="min-price">
+                  <span>от</span>
+                </label>
+                <label>
+                  <input class="range-input range-input-max-price" type="number" value="9000" name="max-price">
+                  <span>до</span>
+                </label>
+              </div>
+              <div class="range-scale">
+                <div class="range-bar" style="left: 0; right: 61px;">
+                  <button class="range-toggle toggle-min" type="button">
+                    <span class="visually-hidden">Изменить минимальную цену.</span>
+                  </button>
+                  <button class="range-toggle toggle-max" type="button">
+                    <span class="visually-hidden">Изменить максимальную цену.</span>
+                  </button>
+                </div>
+              </div>
             </fieldset>
             <div class="buttons-form">
               <button class="button submit-button" type="submit">Применить</button>
@@ -122,7 +148,7 @@
           <h2 class="visually-hidden">Каталог гостиниц</h2>
           <div class="sorting">
             <p class="sorting-title">Найдено гостиниц: 38</p>
-            <select class="sorting-by-price" aria-label="Отсортировать">
+            <select class="sorting-by-price" name="sorting-by-price" id="sorting-by-price" aria-label="Отсортировать">
               <option value="cheap" selected>Сначала дешевые</option>
               <option value="expensive">Сначала дорогие</option>
               <option value="popular">Сначала популярные</option>
@@ -304,7 +330,6 @@
           </a>
         </section>
       </footer>
-
     </div>
   </body>
 

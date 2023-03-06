@@ -40,9 +40,7 @@
               </a>
             </li>
             <li class="navigation-item">
-              <a class="navigation-user-button-wrapper" href="#">
-                <span class="button navigation-user-button">Хочу сюда!</span>
-              </a>
+              <button type="button" class="button navigation-user-button">Хочу сюда!</button>
             </li>
           </ul>
         </nav>
@@ -183,6 +181,75 @@
           </a>
         </section>
       </footer>
+    </div>
+    <div class="modal-overlay modal-close">
+      <div class="modal-container">
+        <form class="hotel-search-form" action="https://echo.htmlacademy.ru/" method="post">
+          <h2 class="page-big-text">Поиск гостиницы в Седоне</h2>
+          <button type="button" class="hotel-search-close-button">
+            <span class="visually-hidden">Закрыть</span>
+            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg" focusable="false"
+              aria-hidden="true">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M14 1.29231L12.7077 0L7 5.70769L1.29231 0L0 1.29231L5.70769 7L0 12.7077L1.29231 14L7 8.29231L12.7077 14L14 12.7077L8.29231 7L14 1.29231Z" />
+            </svg>
+          </button>
+          <label class="arrival-date arrival-date-error">Дата заезда:
+            <input type="text" class="arrival-date-input" name="arrival-date" value="27 апреля 2020"
+              placeholder="Укажите дату">
+            <span class="hint hint-error">Мы не можем отправить вас в прошлое</span>
+          </label>
+          <label class="departure-date">Дата выезда:
+            <input type="text" class="departure-date-input" name="departure-date" value="1 сентября 2023"
+              placeholder="Укажите дату">
+            <span class="hint">На эти даты есть свободные номера. Пока есть.</span>
+          </label>
+          <label class="quantity-of-adults" for="quantity-of-adults">Взрослые:
+            <input type="number" class="quantity-of-adults-input" name="quantity-of-adults" id="quantity-of-adults"
+              value="2" min="1">
+            <button type="button" class="delete-person">
+              <span class="visually-hidden">Меньше.</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" focusable="false"
+                aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 9v2h14V9H3Z" />
+              </svg>
+              <button type="button" class="add-person">
+                <span class="visually-hidden">Больше.</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" focusable="false"
+                  aria-hidden="true">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
+                </svg>
+              </button>
+            </button>
+          </label>
+          <label class="quantity-of-children" for="quantity-of-children">Дети:
+            <div class="about-children" tabindex="0">
+              <span class="visually-hidden">Подробнее.</span>
+              <p class="tooltip-children white">Укажите количество детей, которые будут с вами, возраст которых от 6 до
+                18 лет.
+                Дети до 6 лет размещаются бесплатно.
+              </p>
+            </div>
+            <input type="number" class="quantity-of-children-input" name="quantity-of-children "
+              id="quantity-of-children" value="2" min="0">
+            <button type="button" class="delete-person">
+              <span class="visually-hidden">Меньше.</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" focusable="false"
+                aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M3 9v2h14V9H3Z" />
+              </svg>
+            </button>
+            <button type="button" class="add-person">
+              <span class="visually-hidden">Больше.</span>
+              <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" focusable="false"
+                aria-hidden="true">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M17 9H11V3H9V9H3V11H9V17H11V11H17V9Z" />
+              </svg>
+            </button>
+          </label>
+          <button type="submit" class="button hotel-search-submit-button">Найти</button>
+        </form>
+      </div>
     </div>
   </body>
 
