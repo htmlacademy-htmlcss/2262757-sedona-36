@@ -491,12 +491,13 @@ body {
   line-height: 24px;
   font-weight: 700;
   padding: 0;
+  margin-bottom: 32px;
 }
 
 .hotels-filter-list {
   list-style-type: none;
   padding: 0;
-  margin: 32px 0 0 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -526,8 +527,6 @@ body {
 
 .hotels-filter-item label {
   display: flex;
-  font-size: 18px;
-  line-height: 23px;
   align-items: center;
 }
 
@@ -537,7 +536,12 @@ body {
   height: 20px;
   display: block;
   background-color: white;
-  margin-right: 16px;
+}
+
+.checkbox-radio-text {
+  font-size: 18px;
+  line-height: 23px;
+  margin-left: 16px;
 }
 
 .checkbox-input {
@@ -577,7 +581,6 @@ body {
 .range-inputs {
   display: flex;
   gap: 2px;
-  margin-top: 32px;
   margin-bottom: 44px;
 }
 
@@ -1361,7 +1364,9 @@ body {
 
 /*Каталог форма*/
 
-.hotels-filter-item:hover {
+.hotels-filter-item:hover .checkbox-input,
+.hotels-filter-item:hover .radio-input,
+.hotels-filter-item:hover .checkbox-input {
   opacity: 0.6;
 }
 
@@ -1370,20 +1375,21 @@ body {
   outline: 3px solid #83B3D3;
 }
 
-.hotels-filter-item:active {
+.hotels-filter-item:active .checkbox-input,
+.hotels-filter-item:active .radio-input,
+.hotels-filter-item:active .checkbox-input {
   opacity: 0.3;
-  outline: none;
 }
 
 .visually-hidden-checkbox:disabled + .checkbox-input,
 .visually-hidden-radio:disabled + .radio-input {
-  background-color: rgba(0, 0, 0, 0.2);
-  background-image: none;
+  display: none;
 }
 
-.visually-hidden-checkbox:disabled + .checkbox-input::before,
-.visually-hidden-radio:disabled + .radio-input::before {
-  display: none;
+.visually-hidden-checkbox:disabled ~ .checkbox-radio-text,
+.visually-hidden-radio:disabled ~ .checkbox-radio-text {
+  margin-left: 36px;
+  opacity: 0.2;
 }
 
 /*Ползунок*/
