@@ -1106,7 +1106,7 @@ body {
 
 .hotel-search-form {
   display: grid;
-  grid-template-columns: 137px auto auto auto;
+  grid-template-columns: 137px 110px 138px 192px;
   align-items: center;
   margin-top: 64px;
   font-size: 20px;
@@ -1168,23 +1168,25 @@ body {
 .adults,
 .children {
   position: relative;
-  grid-column: span 2;
   display: flex;
   align-items: center;
   width: max-content;
 }
 
-.children {
-  justify-self: end;
+.label-children {
+  text-align: right;
 }
 
 .number-of-adults,
 .number-of-children {
   width: 110px;
-  margin-left: 46px;
   padding: 10px 38px 10px 38px;
   text-align: center;
   appearance: textfield;
+}
+
+.number-of-children {
+  margin-left: 46px;
 }
 
 .number-of-adults::-webkit-inner-spin-button,

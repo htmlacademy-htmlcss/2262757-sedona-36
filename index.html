@@ -182,7 +182,7 @@
         </section>
       </footer>
     </div>
-    <div class="modal-overlay modal-close">
+    <div class="modal-overlay">
       <div class="modal-container">
         <h2 class="big-text">Поиск гостиницы в Седоне</h2>
         <button type="button" class="close-button">
@@ -202,8 +202,9 @@
           <input class="departure-date" type="text" id="departure-date" name="departure-date" value="1 сентября 2023"
             placeholder="Укажите дату" required>
           <p class="hint">На эти даты есть свободные номера. Пока есть.</p>
+
+          <label class="label-adults" for="number-of-adults">Взрослые:</label>
           <div class="adults">
-            <label class="persons" for="number-of-adults">Взрослые:</label>
             <input class="number-of-adults" type="number" id="number-of-adults" name="number-of-adults" value="2"
               min="1" required>
             <button class="delete-person" type="button">
@@ -221,8 +222,9 @@
               </svg>
             </button>
           </div>
+
+          <label class="label-children" for="number-of-children">Дети:</label>
           <div class="children">
-            <label class="persons" for="number-of-children">Дети:</label>
             <div class="about-children" role="tooltip" tabindex="0" aria-labelledby="tooltip-children">
               <span class="visually-hidden">Подробнее.</span>
               <p class="tooltip-children" id="tooltip-children">Укажите количество детей, которые будут с вами, возраст
