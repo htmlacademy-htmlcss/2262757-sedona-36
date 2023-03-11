@@ -60,7 +60,7 @@
           </header>
           <form class="filter" action="https://echo.htmlacademy.ru/" method="get">
             <h2 class="visually-hidden">Фильтр</h2>
-            <fieldset class="filter-area">
+            <fieldset class="infrastructure">
               <legend class="filter-title">Инфраструктура:</legend>
               <ul class="filter-list">
                 <li class="filter-item">
@@ -86,7 +86,7 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-area">
+            <fieldset class="residence-type">
               <legend class="filter-title">Тип Жилья:</legend>
               <ul class="filter-list">
                 <li class="filter-item">
@@ -115,15 +115,17 @@
                 </li>
               </ul>
             </fieldset>
-            <fieldset class="filter-area">
+            <fieldset class="price">
               <legend class="filter-title">Стоимость, ₽:</legend>
               <div class="range-inputs">
                 <label for="min-price">
-                  <input class="range-input min-price" type="number" id="min-price" value="0" name="min-price" min="0">
+                  <input class="range-input min-price" type="number" id="min-price" value="0" name="min-price" min="0"
+                    required>
                   <span>от</span>
                 </label>
                 <label for="max-price">
-                  <input class="range-input max-price" type="number" id="max-price" value="9000" name="max-price">
+                  <input class="range-input max-price" type="number" id="max-price" value="9000" name="max-price"
+                    min="0" required>
                   <span>до</span>
                 </label>
               </div>

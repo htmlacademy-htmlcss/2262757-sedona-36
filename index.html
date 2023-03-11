@@ -80,7 +80,7 @@
             <li class="advantages-item light">
               <div class="advantages-container">
                 <h3 class="advantages-title">Мало<br>туристов</h3>
-                <p class="advantages-description">Большинство едет в Гранд Каньон<br>и толпится там</p>
+                <p class="advantages-description">Большинство едет в Гранд<br>Каньон и толпится там</p>
               </div>
             </li>
             <li class="advantages-item blue">
@@ -97,7 +97,7 @@
             <p class="common-text">Опытный персонал и качественное обслуживание!</p>
           </div>
           <ul class="lower-advantages-list">
-            <li class="lower-advantages-item light-blue habitation">
+            <li class="lower-advantages-item light habitation">
               <h3 class="advantages-title">Жильё</h3>
               <p class="advantages-description">Рекомендуем пожить<br>в настоящем мотеле,<br>всё как в кино!</p>
             </li>
@@ -106,7 +106,7 @@
               <p class="advantages-description">Всегда заказывайте<br>топовый фирменный бургер,<br>вы не разочаруетесь!
               </p>
             </li>
-            <li class="lower-advantages-item light-blue souvenirs">
+            <li class="lower-advantages-item light souvenirs">
               <h3 class="advantages-title">Сувениры</h3>
               <p class="advantages-description">Не только китайского,<br>но и настоящего местного производства!</p>
             </li>
@@ -194,11 +194,11 @@
           </svg>
         </button>
         <form class="hotel-search-form" action="https://echo.htmlacademy.ru/" method="post">
-          <label class="check-in-dates" for="arrival-date">Дата заезда:</label>
+          <label class="check-in-dates" for="arrival-date">Дата Заезда:</label>
           <input class="arrival-date" type="text" id="arrival-date" name="arrival-date" value="27 апреля 2020"
             placeholder="Укажите дату" required>
           <p class="hint hint-error">Мы не можем отправить вас в прошлое</p>
-          <label class="check-in-dates" for="departure-date">Дата выезда:</label>
+          <label class="check-in-dates" for="departure-date">Дата Выезда:</label>
           <input class="departure-date" type="text" id="departure-date" name="departure-date" value="1 сентября 2023"
             placeholder="Укажите дату" required>
           <p class="hint">На эти даты есть свободные номера. Пока есть.</p>
@@ -206,7 +206,7 @@
           <label class="label-adults" for="number-of-adults">Взрослые:</label>
           <div class="adults">
             <input class="number-of-adults" type="number" id="number-of-adults" name="number-of-adults" value="2"
-              min="1" required>
+              min="0" required>
             <button class="delete-person" type="button">
               <span class="visually-hidden">Меньше.</span>
               <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
@@ -233,7 +233,7 @@
               </p>
             </div>
             <input class="number-of-children" type="number" id="number-of-children" name="number-of-children " value="2"
-              min="0">
+              min="0" required>
             <button class="delete-person" type="button">
               <span class="visually-hidden">Меньше.</span>
               <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
