@@ -550,20 +550,19 @@ body {
 
 /*Чекбоксы радио*/
 
-.filter-item label {
+.filter-item {
   display: flex;
   align-items: center;
 }
 
 .checkbox-input,
 .radio-input {
-  display: block;
   width: 20px;
   height: 20px;
   background-color: #ffffff;
 }
 
-.checkbox-radio-text {
+.filter-text {
   width: 114px;
   margin-left: 16px;
   font-size: 18px;
@@ -1352,7 +1351,6 @@ body {
 }
 
 .navigation-user-button:disabled,
-.hotel-search-button:disabled,
 .subscribe-button:disabled,
 .hotel-search-submit:disabled,
 .submit-button:disabled,
@@ -1495,9 +1493,19 @@ body {
 
 /*Чекбоксы радио*/
 
+.filter-item:hover,
+.filter-item:hover {
+  opacity: 0.6;
+}
+
 .filter-item:hover .checkbox-input,
 .filter-item:hover .radio-input {
-  opacity: 0.6;
+  outline: none;
+}
+
+.filter-item:focus-within,
+.filter-item:focus-within {
+  opacity: 1;
 }
 
 .hidden-checkbox:focus + .checkbox-input,
@@ -1505,9 +1513,14 @@ body {
   outline: 3px solid #83b3d3;
 }
 
+.filter-item:active,
+.filter-item:active {
+  opacity: 0.3;
+}
+
 .filter-item:active .checkbox-input,
 .filter-item:active .radio-input {
-  opacity: 0.3;
+  outline: none;
 }
 
 .hidden-checkbox:disabled + .checkbox-input,
@@ -1515,8 +1528,8 @@ body {
   display: none;
 }
 
-.hidden-checkbox:disabled ~ .checkbox-radio-text,
-.hidden-radio:disabled ~ .checkbox-radio-text {
+.hidden-checkbox:disabled ~ .filter-text,
+.hidden-radio:disabled ~ .filter-text {
   margin-left: 36px;
   opacity: 0.2;
 }
