@@ -1397,7 +1397,8 @@ body {
 
 /*Инпуты текст и число*/
 
-.subscribe-input::placeholder .arrival-date::placeholder,
+.subscribe-input::placeholder,
+.arrival-date::placeholder,
 .departure-date::placeholder,
 .number-of-adults::placeholder,
 .number-of-children::placeholder {
